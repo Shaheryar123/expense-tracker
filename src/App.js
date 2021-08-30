@@ -7,35 +7,32 @@ function App()
 {
   const [transactions,setTransactions] = useState([
     {
-        id: 0,
-        text: 'Payment',
-        amount: 700
+      id: 0,
+      text: 'work',
+      amount: 3434
     },
     {
-        id: 1,
-        text: 'Utility',
-        amount: 100
-    },
-    {
-        id: 2,
-        text: 'Fees',
-        amount: 130
+      id: 1,
+      text: 'utitlity',
+      amount: 34
     }
+    
 ])
 
  const AddTransct = (transaction) =>
  {
    
-   const id = Math.floor(Math.round() * 100) +1
-   const newTransec = { transaction, id }
-   console.log(transaction,id)
+   const id = Math.floor(Math.random() * 100) + 1
+    const newTransec = { ...transaction, id }
+   
    setTransactions([...transactions, newTransec])
+   console.log(transactions)
   }
   return (
     <div>
       <Header />
-      <Balance />
-      <History transactions={ transactions}/>
+      <Balance amounts={ transactions}/>
+      {transactions.length >0? <History transactions={ transactions}/>:''}
       <AddTransactions AddTransct = {AddTransct} />
     
     </div>
