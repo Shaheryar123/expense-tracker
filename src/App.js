@@ -27,11 +27,14 @@ function App()
    
    setTransactions([...transactions, newTransec])
    console.log(transactions)
+
+  
+
   }
   return (
     <div>
       <Header />
-      <Balance amounts={ transactions}/>
+      <Balance transactions={transactions} />
       {transactions.length >0? <History transactions={ transactions}/>:''}
       <AddTransactions AddTransct = {AddTransct} />
     

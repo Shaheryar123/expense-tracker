@@ -1,10 +1,10 @@
-const Balance = ({amounts}) =>
+const Balance = ({ transactions }) =>
 {
-    var ans = 0;
-    amounts.map(ele=>{
-        ans+=ele.amount
-    })
-
+    var ans = 0
+    transactions.map((transaction) => {
+         return ans = ans+ transaction.amount
+       
+})
     //const sumAmount = amounts.reduce((accumulator, current) => accumulator + current.amount, 0);
     
     return (

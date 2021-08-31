@@ -16,8 +16,12 @@ const AddTransactions = ({AddTransct}) =>{
              
              setText('')
              setAmount('')
+             
+
+             
             
-        }
+    }
+    
         
     
     return (
