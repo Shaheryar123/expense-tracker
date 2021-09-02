@@ -7,16 +7,10 @@ function App()
 {
   const [transactions,setTransactions] = useState([
     {
-      id: 0,
-      text: 'work',
-      amount: 3434
-    },
-    {
-      id: 1,
-      text: 'utitlity',
-      amount: 34
-    }
-    
+      id:0 ,
+      text: '',
+      amount: 0
+    }  
 ])
 
  const AddTransct = (transaction) =>
@@ -26,16 +20,12 @@ function App()
     const newTransec = { ...transaction, id }
    
    setTransactions([...transactions, newTransec])
-   console.log(transactions)
-
-  
-
   }
   return (
     <div>
       <Header />
       <Balance transactions={transactions} />
-      {transactions.length >0? <History transactions={ transactions}/>:''}
+      {transactions.length >1? <History transactions={ transactions}/>:''}
       <AddTransactions AddTransct = {AddTransct} />
     
     </div>

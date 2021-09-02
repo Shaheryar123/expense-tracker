@@ -2,7 +2,7 @@ import { useState } from "react"
 const AddTransactions = ({AddTransct}) =>{
    
         const [text, setText] = useState('')
-        const [amount, setAmount] = useState('')    
+        const [amount, setAmount] = useState(0)    
     
          const onSubmit = (e) =>
         {
@@ -15,15 +15,9 @@ const AddTransactions = ({AddTransct}) =>{
              AddTransct({ text, amount })
              
              setText('')
-             setAmount('')
-             
-
-             
-            
+             setAmount(0)         
     }
-    
-        
-    
+           
     return (
 
             <form onSubmit ={onSubmit}>
