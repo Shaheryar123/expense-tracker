@@ -1,38 +1,29 @@
 const Balance = ({ transactions }) =>
-
 {
-   
-    var addAmount = 0
-    var subAmount = 0
-   
-    const ans = transactions?.map((e) => {
+
+    const ans = transactions?.map((e) =>
+    {
         return parseInt(e.amount)
         
-   })
-    const lastAmount=transactions.slice(-1)
-    if (lastAmount[0].amount > 0) {
-        addAmount = ans?.reduce((accumulator, currentValue) => accumulator + currentValue)
-        console.log(addAmount)
-    }
-    if (lastAmount[0].amount < 0) {
-        subAmount = lastAmount[0].amount
-        console.log(subAmount)
+    })
     
-    }
-    console.log("ans",ans)
+    const balance = ans.reduce(((accumulator, currentValue) => accumulator + currentValue))
+    const income =  ans.filter(item => item > 0).reduce(((accumulator, currentValue) => accumulator + currentValue))
+    const expense = ans.filter(item => item <0).reduce(((accumulator, currentValue) => accumulator + currentValue))
+  
     return (
 
         <div>
             <h3>YOUR BALANCE</h3>
-           <h1 style ={{ color :'green',marginTop: '-15pt'}}>$450.00</h1> 
+            <h1 style={{ color: 'green', marginTop: '-15pt' }}>${balance}.00</h1>
             <div style={{marginLeft:'10%', display:'flex'}}>
                 <div style ={{ padding:'10pt 40pt 10pt 40pt' ,textAlign:'center' ,outline: "solid grey", outlineWidth:'1pt'}}>
                     <h4>INCOME</h4>
-                    <h3 style={{ color: 'green', marginTop: '-15pt' }}  >{addAmount}</h3>
+                    <h3 style={{ color: 'green', marginTop: '-15pt' }}  >${income-1}.00</h3>
                 </div>
                 <div style ={{textAlign:'center',padding:'10pt 40pt 10pt 40pt' ,outline: "solid grey",outlineWidth:'1pt'}}>
                     <h4>EXPENSE</h4>
-                    <h3 style={{ color: 'red', marginTop: '-15pt' }} >{ subAmount}</h3>
+                    <h3 style={{ color: 'red', marginTop: '-15pt' }} >-${ Math.abs(expense)-1}.00</h3>
                     
                 </div>
         </div>

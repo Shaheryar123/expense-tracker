@@ -9,9 +9,16 @@ function App()
     {
       id:0 ,
       text: '',
-      amount: 0
-    }  
-])
+      amount: 1
+    },
+    {
+      id: 1,
+      text: 'sdsd',
+      amount: -1  }
+  ])
+  const deleteTransaction =(id) =>{
+    setTransactions(transactions.filter((transaction)=> transaction.id !== id))
+  }
 
  const AddTransct = (transaction) =>
  {
@@ -25,7 +32,7 @@ function App()
     <div>
       <Header />
       <Balance transactions={transactions} />
-      {transactions.length >1? <History transactions={ transactions}/>:''}
+      {transactions.length > 1 ? <History deleteTransaction={deleteTransaction }  transactions={ transactions}/>:''}
       <AddTransactions AddTransct = {AddTransct} />
     
     </div>
@@ -43,4 +50,4 @@ export default App;
 
 
 
-// ===  =  =
+// ===  =  -----

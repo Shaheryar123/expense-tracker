@@ -28,6 +28,17 @@
 .App-link {
   color: #61dafb;
 }
+.App-history {
+  background-color: rgb(175, 177, 175);
+}
+
+.App-btn {
+  cursor: pointer;
+  color: red;
+  display: flex;
+  align-items: center;
+  min-height: -4vh;
+}
 
 @keyframes App-logo-spin {
   from {
